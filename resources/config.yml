@@ -1,0 +1,2 @@
+# Set the cycle in which the crop will grow. (sec)
+grow-interval: 60
