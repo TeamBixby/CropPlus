@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/TeamBixby/CropPlus/master/assets/icon.png" align="center" height="150" width="auto"></a>
+<p align="center"> <img src="https://raw.githubusercontent.com/TeamBixby/CropPlus/master/assets/icon.png" height="150" width="auto"></a> </p>
 <br> <h1 align="center">CropPlus :: Easy crop management</h1>
 
 Manage your server crops with this plugin!
