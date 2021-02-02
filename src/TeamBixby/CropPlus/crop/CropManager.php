@@ -89,6 +89,9 @@ class CropManager{
 	}
 
 	public function growNormal(Position $pos) : bool{
+		if(!$pos->isValid()){
+			return false;
+		}
 		$key = CropUtils::pos2str($pos);
 		if(!isset($this->data[$key])){
 			return false;
@@ -114,6 +117,9 @@ class CropManager{
 	}
 
 	public function growStem(Position $pos) : bool{
+		if(!$pos->isValid()){
+			return false;
+		}
 		$key = CropUtils::pos2str($pos);
 		if(!isset($this->data[$key])){
 			return false;
@@ -149,6 +155,9 @@ class CropManager{
 	}
 
 	public function growCocoa(Position $pos) : bool{
+		if(!$pos->isValid()){
+			return false;
+		}
 		$key = CropUtils::pos2str($pos);
 		if(!isset($this->data[$key])){
 			return false;
