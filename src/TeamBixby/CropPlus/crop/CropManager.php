@@ -92,6 +92,11 @@ class CropManager{
 		if(!$pos->isValid()){
 			return false;
 		}
+		if(($down = $pos->getLevel()->getBlock($pos->getSide(Vector3::SIDE_DOWN)))->getId() !== BlockIds::FARMLAND)
+		{
+			$this->destroyCrop($down);
+			return false;
+		}
 		$key = CropUtils::pos2str($pos);
 		if(!isset($this->data[$key])){
 			return false;
@@ -118,6 +123,11 @@ class CropManager{
 
 	public function growStem(Position $pos) : bool{
 		if(!$pos->isValid()){
+			return false;
+		}
+		if(($down = $pos->getLevel()->getBlock($pos->getSide(Vector3::SIDE_DOWN)))->getId() !== BlockIds::FARMLAND)
+		{
+			$this->destroyCrop($down);
 			return false;
 		}
 		$key = CropUtils::pos2str($pos);
