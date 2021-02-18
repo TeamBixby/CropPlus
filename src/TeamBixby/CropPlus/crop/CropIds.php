@@ -30,6 +30,8 @@ final class CropIds{
 
 	public const WATERMELON = 4;
 	public const PUMPKIN = 5;
+	
+	public const BEETROOT = 6;
 
 	public const STEM = 0;
 	public const BLOCK = 1;
@@ -38,6 +40,7 @@ final class CropIds{
 		self::WHEAT => BlockIds::WHEAT_BLOCK,
 		self::CARROT => BlockIds::CARROTS,
 		self::POTATO => BlockIds::POTATOES,
+		self::BEETROOT => BlockIds::BEETROOT_BLOCK,
 		self::WATERMELON => [
 			self::STEM => BlockIds::MELON_STEM,
 			self::BLOCK => BlockIds::MELON_BLOCK
@@ -53,6 +56,7 @@ final class CropIds{
 		BlockIds::WHEAT_BLOCK => self::WHEAT,
 		BlockIds::CARROTS => self::CARROT,
 		BlockIds::POTATOES => self::POTATO,
+		BlockIds::BEETROOT_BLOCK => self::BEETROOT,
 		BlockIds::MELON_STEM => self::WATERMELON,
 		BlockIds::PUMPKIN_STEM => self::PUMPKIN,
 		BlockIds::COCOA => self::COCOA
