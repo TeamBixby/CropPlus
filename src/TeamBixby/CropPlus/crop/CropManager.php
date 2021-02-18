@@ -88,7 +88,7 @@ class CropManager{
 		CropPlus::getInstance()->getLogger()->debug("Grow result: normal($normalCount), stem($stemCount), cocoa($cocoaCount)");
 	}
 
-	public function growNormal(Position $pos) : bool{
+	public function growNormal(Position $pos, bool $force = false) : bool{
 		if(!$pos->isValid()){
 			return false;
 		}
@@ -101,7 +101,7 @@ class CropManager{
 		if(!isset($this->data[$key])){
 			return false;
 		}
-		if(time() - $this->data[$key]["updatedAt"] < CropPlus::getInstance()->getGrowInterval()){
+		if(!$force && time() - $this->data[$key]["updatedAt"] < CropPlus::getInstance()->getGrowInterval()){
 			return false;
 		}
 		if(!$pos->getLevel()->isChunkLoaded($pos->getFloorX() >> 4, $pos->getFloorZ() >> 4)){
@@ -121,7 +121,7 @@ class CropManager{
 		return true;
 	}
 
-	public function growStem(Position $pos) : bool{
+	public function growStem(Position $pos, bool $force = false) : bool{
 		if(!$pos->isValid()){
 			return false;
 		}
@@ -134,7 +134,7 @@ class CropManager{
 		if(!isset($this->data[$key])){
 			return false;
 		}
-		if(time() - $this->data[$key]["updatedAt"] < CropPlus::getInstance()->getGrowInterval()){
+		if(!$force && time() - $this->data[$key]["updatedAt"] < CropPlus::getInstance()->getGrowInterval()){
 			return false;
 		}
 		if(!$pos->getLevel()->isChunkLoaded($pos->getFloorX() >> 4, $pos->getFloorZ() >> 4)){
@@ -164,7 +164,7 @@ class CropManager{
 		return true;
 	}
 
-	public function growCocoa(Position $pos) : bool{
+	public function growCocoa(Position $pos, bool $force = false) : bool{
 		if(!$pos->isValid()){
 			return false;
 		}
@@ -172,7 +172,7 @@ class CropManager{
 		if(!isset($this->data[$key])){
 			return false;
 		}
-		if(time() - $this->data[$key]["updatedAt"] < CropPlus::getInstance()->getGrowInterval()){
+		if(!$force && time() - $this->data[$key]["updatedAt"] < CropPlus::getInstance()->getGrowInterval()){
 			return false;
 		}
 		if(!$pos->getLevel()->isChunkLoaded($pos->getFloorX() >> 4, $pos->getFloorZ() >> 4)){
