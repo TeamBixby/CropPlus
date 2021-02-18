@@ -75,6 +75,7 @@ class CropManager{
 				case CropIds::WHEAT:
 				case CropIds::CARROT:
 				case CropIds::POTATO:
+				case CropIds::BEETROOT:
 					if($this->growNormal(CropUtils::str2pos($key))){
 						$normalCount++;
 					}
